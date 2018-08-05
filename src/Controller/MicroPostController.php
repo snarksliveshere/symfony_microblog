@@ -92,4 +92,18 @@ class MicroPostController
                 ['form' => $form->createView()])
         );
     }
+
+    /**
+     * @Route("/{id}", name="post.html.twig")
+     */
+    public function post(MicroPost $post)
+    {
+
+        return new Response(
+            $this->twig->render('micro-post/post.html.twig',[
+                'post' => $post
+            ])
+        );
+
+    }
 }
