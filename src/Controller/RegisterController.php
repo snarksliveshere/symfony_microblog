@@ -29,7 +29,7 @@ class RegisterController extends Controller
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->redirectToRoute('micro_post_index');
+            return $this->redirectToRoute('micro_post_index');
 
         }
 
