@@ -16,6 +16,7 @@ class RegisterController extends Controller
      */
     public function register(UserPasswordEncoderInterface $passwordEncoder, Request $request)
     {
+        $this->denyAccessUnlessGranted('edit', $microPost);
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
