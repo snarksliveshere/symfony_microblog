@@ -5,9 +5,7 @@
     {% endfor %}
     <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
     {% for post in posts %}
-        <a href="{{ path('post.html.twig', {'id': post.id}) }}">
-            {{ include('micro-post/raw-post.html.twig', { 'post': post }) }}
-        </a>
+        {{ include('micro-post/raw-post.html.twig', { 'post': post }) }}
         <small class="d-block text-right mt-3">
             {% if is_granted('edit', post) %}
                 <a href="{{ path('micro_post_edit', {'id': post.id}) }}">Edit</a>
